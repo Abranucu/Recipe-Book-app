@@ -5,9 +5,12 @@ import Sidebar from "./Sidebar"
 
 function Homepage() {
   return (
-    <div>
+    <div className="home-page">
         <Navbar />
-        <Sidebar />
+        <aside className="sidebar-links">
+          <Sidebar />
+        </aside>
+        
         <Footer />
     </div>
   )
