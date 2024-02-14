@@ -1,24 +1,29 @@
-import allRecipes from "../data/Recipes.json"
+import { useState } from "react";
+import ListItem from "./ListItem";
 
-function List() {
-    return (
-        {currentAllRecipes.map((eachObject, index) => {
-            return(
-             <div key={eachObject.id}>  
-          <img src={eachObject.image} alt={eachObject.name} width="200px"/>
-            <h4>Nombre: {eachObject.name} </h4>
-            <p>calories: {eachObject.calories}</p>
-            <p>servings: {eachObject.servings}</p>
-            <p>Recipes +400Cal: {eachObject.calories >= 400 ? "⬆️" :  "⬇️"}</p>
-            <button onClick={() => handleRemoveRecipe(index)}>Borrar</button>
-            <hr/>
+function List({ data }) {
+  const [currentAllRecipes, setCurrenAllRecipe] = useState(data);
+  const handleRemoveRecipe = (index) => {
+    console.log("intentando borrar", eachObject.id);
+    let recipesStateClone = JSON.parse(JSON.stringify(currentAllRecipes));
+    recipesStateClone.splice(index, 1);
+    setCurrenAllRecipe(recipesStateClone);
+  };
+  return (
+    <div>
+      <h2>Lista de Recetas</h2>
+      <hr />
+      {currentAllRecipes.map((eachObject, index) => {
+
+        return (
+          <div key={eachObject.id}>
+            <ListItem data={eachObject} index/>
+            <hr />
           </div>
-  )          
-     }
-
-  )}
-       
-    )
+        );
+      })}
+    </div>
+  );
 }
 
-export default List
+export default List;

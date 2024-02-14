@@ -1,22 +1,8 @@
-import { useState } from "react";
-import List from './List';
+import List from "./List";
+import allRecipes from "../data/Recipes.json";
 
 function RecipesList() {
+  return <List data={allRecipes} />;
+}
 
-    const [ currentAllRecipes, setCurrenAllRecipe ] = useState(allRecipes)
-    const  handleRemoveRecipe = (index) =>{
-        let recipesStateClone = JSON.parse(JSON.stringify(currentAllRecipes))
-        recipesStateClone.splice(index, 1)
-        setCurrenAllRecipe(recipesStateClone)
-    }
-    return (
-        <div>
-            <h2>Lista de Recetas</h2>
-             <hr />
-             <List/>
-  </div>
-    )}
-
-    
-
-export default RecipesList
+export default RecipesList;
