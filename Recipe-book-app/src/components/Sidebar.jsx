@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom"
 
 function Sidebar() {
   return (
     <div className="sidebar">
-      <a href="#">Home</a>
-      <a href="#">About</a>
+      <Link to={"/"}>Home</Link>
+      <Link to={"/about"}>About</Link>
     </div>
   )
 }
