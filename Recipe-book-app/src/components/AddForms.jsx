@@ -3,7 +3,6 @@ import { Form } from "react-router-dom";
 import { useState } from "react";
 
 function AddForms(props) {
-    console.log(props.allRecipes);
     
   const [name, setName] = useState("");
   const [calories, setCalories] = useState(0);

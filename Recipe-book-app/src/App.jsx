@@ -6,8 +6,8 @@ import HomePage from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ItemDetails from "./pages/ItemDetails";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
+import Navbar from "./components/NavBar";
+import Sidebar from "./components/SideBar";
 import { useState } from "react";
 import recipes from "./data/Recipes.json";
 
