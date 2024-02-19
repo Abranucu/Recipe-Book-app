@@ -6,8 +6,8 @@ import HomePage from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ItemDetails from "./pages/ItemDetails";
 import Footer from "./components/Footer";
-import Navbar from "./components/NavBar";
-import Sidebar from "./components/SideBar";
+import NavBar from "./components/NavBar";
+import SideBar from "./components/SideBar";
 import { useState } from "react";
 import recipes from "./data/Recipes.json";
 
@@ -15,8 +15,8 @@ function App() {
   const [currentAllRecipes, setCurrentAllRecipes] = useState(recipes);
   return (
     <div>
-      <Navbar />
-      <Sidebar />
+      <NavBar />
+      <SideBar />
       <Routes>
         <Route
           path={"/"}

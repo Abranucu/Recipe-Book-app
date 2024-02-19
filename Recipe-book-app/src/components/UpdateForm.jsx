@@ -37,10 +37,11 @@ function UpdateForm(props) {
     };
 
     props.setCurrentAllRecipes((prevRecipes) => {
-        const updatedRecipes = [...prevRecipes];
-        updatedRecipes[props.index] = editedRecipe;
-        return updatedRecipes;
-      });
+      const updatedRecipes = [...prevRecipes];
+      updatedRecipes[props.index] = editedRecipe;
+      return updatedRecipes;
+    });
+    props.handleToggleUpdateForm(false);
   };
   return (
     <div>

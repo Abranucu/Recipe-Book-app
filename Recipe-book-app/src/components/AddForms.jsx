@@ -3,7 +3,6 @@ import { Form } from "react-router-dom";
 import { useState } from "react";
 
 function AddForms(props) {
-    
   const [name, setName] = useState("");
   const [calories, setCalories] = useState(0);
   const [servings, setServings] = useState(1);
@@ -43,7 +42,12 @@ function AddForms(props) {
       clone.unshift(newRecipe);
       return clone;
     });
-  };
+    setName("");
+    setCalories(0);
+    setServings(1);
+    setImg("");
+    
+  }
 
   return (
     <div>
@@ -81,7 +85,9 @@ function AddForms(props) {
           />
         </div>
 
-        <button>Añadir</button>
+        <button>
+          Añadir
+        </button>
       </form>
     </div>
   );
