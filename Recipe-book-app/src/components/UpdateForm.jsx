@@ -48,7 +48,7 @@ function UpdateForm(props) {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
       <FloatingLabel
                 controlId="floatingInput"
                 label="URL Img:"
@@ -90,11 +90,11 @@ function UpdateForm(props) {
               </FloatingLabel>
 
         <div className="d-grid gap-2">
-                <Button variant="primary" size="lg">
+                <Button variant="primary" size="lg" type="submit">
                   Editar
                 </Button>
               </div>
-      </form>
+      </Form>
     </div>
   );
 }

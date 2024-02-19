@@ -1,10 +1,10 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import noImg from "../assets/noImg.png";
 import Accordion from "react-bootstrap/Accordion";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 function AddForms(props) {
   const [name, setName] = useState("");
@@ -33,6 +33,7 @@ function AddForms(props) {
   };
 
   const handleSubmit = (event) => {
+    console.log(event)
     event.preventDefault();
     const newRecipe = {
       name: name,
@@ -49,7 +50,7 @@ function AddForms(props) {
     setName("");
     setCalories(0);
     setServings(1);
-    setImg("");
+    setImg(noImg);
   };
 
   return (
@@ -58,7 +59,7 @@ function AddForms(props) {
         <Accordion.Item eventKey="0">
           <Accordion.Header>Añadir nueva receta</Accordion.Header>
           <Accordion.Body>
-            <form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit}>
               <FloatingLabel
                 controlId="floatingInput"
                 label="URL Img:"
@@ -100,15 +101,14 @@ function AddForms(props) {
               </FloatingLabel>
 
               <div className="d-grid gap-2">
-                <Button variant="primary" size="lg">
+                <Button variant="primary" size="lg" type="submit">
                   Añadir
                 </Button>
               </div>
-            </form>
+            </Form>
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-      <hr />
     </div>
   );
 }
