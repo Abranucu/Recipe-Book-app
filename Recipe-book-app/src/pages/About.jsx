@@ -34,7 +34,7 @@ function About() {
       <hr />
       <div>
         <div>
-          <img src={meriFoto} alt="meri" width="200px" />
+          <img src={meriFoto} alt="meri" width="200px" style={{margin: "5px"}}/>
         </div>
         <div>
           <ul>
@@ -47,13 +47,13 @@ function About() {
             </li>
             <li>
               <a href="https://github.com/meritxellavila">
-                <img src={logoGithub} alt="logo-github" width="50px" />
+                <img src={logoGithub} alt="logo-github" width="50px" style={{margin: "5px"}}/>
                 GitHub
               </a>
             </li>
             <li>
               <a href="https://www.linkedin.com/in/meritxell-avila-gonzalez-94844029b/">
-                <img src={logoLinkedin} alt="logo-linkedin" width="70px" />
+                <img src={logoLinkedin} alt="logo-linkedin" width="50px" style={{margin: "5px"}}/>
                 Linkedin
               </a>
             </li>
@@ -62,7 +62,7 @@ function About() {
       </div>
       <hr />
       <div>
-        <img src={abryFoto} alt="Abry" width="200px" />
+        <img src={abryFoto} alt="Abry" width="200px" style={{margin: "5px"}}/>
       </div>
       <div>
         <ul>
@@ -77,13 +77,13 @@ function About() {
           </li>
           <li>
             <a href="https://github.com/Abranucu">
-              <img src={logoGithub} alt="logo-github" width="50px" />
+              <img src={logoGithub} alt="logo-github" width="50px" style={{margin: "5px"}}/>
               GitHub
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/abraham-castiello-barbas-0a9502217/">
-              <img src={logoLinkedin} alt="logo-linkedin" width="70px" />
+              <img src={logoLinkedin} alt="logo-linkedin" width="50px" style={{margin: "5px"}}/>
               Linkedin
             </a>
           </li>

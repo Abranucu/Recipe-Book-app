@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import Button from 'react-bootstrap/Button';
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Form from "react-bootstrap/Form";
 
 function UpdateForm(props) {
   const [name, setName] = useState(props.eachObject.name);
@@ -46,37 +49,51 @@ function UpdateForm(props) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="img">URL img:</label>
-          <input type="text" name="img" value={img} onChange={handleImg} />
-        </div>
+      <FloatingLabel
+                controlId="floatingInput"
+                label="URL Img:"
+                className="mb-3"
+              >
+                <Form.Control type="text" value={img} onChange={handleImg} />
+              </FloatingLabel>
 
-        <div>
-          <label htmlFor="name">Nombre:</label>
-          <input type="text" name="name" value={name} onChange={handleName} />
-        </div>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Nombre:"
+                className="mb-3"
+              >
+                <Form.Control type="text" value={name} onChange={handleName} />
+              </FloatingLabel>
 
-        <div>
-          <label htmlFor="calories">Calorias:</label>
-          <input
-            type="number"
-            name="calories"
-            value={calories}
-            onChange={handleCalorias}
-          />
-        </div>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Calorias:"
+                className="mb-3"
+              >
+                <Form.Control
+                  type="number"
+                  value={calories}
+                  onChange={handleCalorias}
+                />
+              </FloatingLabel>
 
-        <div>
-          <label htmlFor="servings">Raciones:</label>
-          <input
-            type="number"
-            name="servings"
-            value={servings}
-            onChange={handleServings}
-          />
-        </div>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Raciones:"
+                className="mb-3"
+              >
+                <Form.Control
+                  type="number"
+                  value={servings}
+                  onChange={handleServings}
+                />
+              </FloatingLabel>
 
-        <button>Editar</button>
+        <div className="d-grid gap-2">
+                <Button variant="primary" size="lg">
+                  Editar
+                </Button>
+              </div>
       </form>
     </div>
   );

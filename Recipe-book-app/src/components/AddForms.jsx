@@ -1,8 +1,10 @@
 import React from "react";
-import { Form } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 import { useState } from "react";
-import noImg from "../assets/noImage.jpg";
+import noImg from "../assets/noImg.png";
 import Accordion from "react-bootstrap/Accordion";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Form from "react-bootstrap/Form";
 
 function AddForms(props) {
   const [name, setName] = useState("");
@@ -53,45 +55,60 @@ function AddForms(props) {
   return (
     <div>
       <Accordion defaultActiveKey="acordion">
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>Añadir nueva receta</Accordion.Header>
-        <Accordion.Body>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="img">URL img:</label>
-          <input type="text" name="img" value={img} onChange={handleImg} />
-        </div>
+        <Accordion.Item eventKey="0">
+          <Accordion.Header>Añadir nueva receta</Accordion.Header>
+          <Accordion.Body>
+            <form onSubmit={handleSubmit}>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="URL Img:"
+                className="mb-3"
+              >
+                <Form.Control type="text" value={img} onChange={handleImg} />
+              </FloatingLabel>
 
-        <div>
-          <label htmlFor="name">Nombre:</label>
-          <input type="text" name="name" value={name} onChange={handleName} />
-        </div>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Nombre:"
+                className="mb-3"
+              >
+                <Form.Control type="text" value={name} onChange={handleName} />
+              </FloatingLabel>
 
-        <div>
-          <label htmlFor="calories">Calorias:</label>
-          <input
-            type="number"
-            name="calories"
-            value={calories}
-            onChange={handleCalorias}
-          />
-        </div>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Calorias:"
+                className="mb-3"
+              >
+                <Form.Control
+                  type="number"
+                  value={calories}
+                  onChange={handleCalorias}
+                />
+              </FloatingLabel>
 
-        <div>
-          <label htmlFor="servings">Raciones:</label>
-          <input
-            type="number"
-            name="servings"
-            value={servings}
-            onChange={handleServings}
-          />
-        </div>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Raciones:"
+                className="mb-3"
+              >
+                <Form.Control
+                  type="number"
+                  value={servings}
+                  onChange={handleServings}
+                />
+              </FloatingLabel>
 
-        <button>Añadir</button>
-      </form>
-      </Accordion.Body>
-      </Accordion.Item>
+              <div className="d-grid gap-2">
+                <Button variant="primary" size="lg">
+                  Añadir
+                </Button>
+              </div>
+            </form>
+          </Accordion.Body>
+        </Accordion.Item>
       </Accordion>
+      <hr />
     </div>
   );
 }

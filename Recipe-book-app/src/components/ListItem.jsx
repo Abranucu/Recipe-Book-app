@@ -1,6 +1,7 @@
 import { useState } from "react";
 import UpdateForm from "./UpdateForm";
 import Accordion from "react-bootstrap/Accordion";
+import Button from 'react-bootstrap/Button';
 
 function ListItem(props) {
   const [isUpdateFormShowing, setIsUpdateFormShowing] = useState(false);
@@ -33,11 +34,18 @@ function ListItem(props) {
             <p>
               Recetas +400Cal: {props.eachObject.calories >= 400 ? "⬆️" : "⬇️"}
             </p>
-            <button onClick={() => handleRemove(props.index)}>Borrar</button>
-            <br />
-            <button onClick={handleToggleUpdateForm}>
-              Ver Formulario de Editar
-            </button>
+            <hr />
+            <div className="d-grid gap-2">
+                <Button variant="primary" size="lg" onClick={() => handleRemove(props.index)}>
+                Borrar
+                </Button>
+              </div>
+            <hr />
+            <div className="d-grid gap-2">
+                <Button variant="primary" size="lg" onClick={handleToggleUpdateForm} style={{marginBottom: "15px"}}>
+                Ver Formulario de Editar
+                </Button>
+              </div>
             {isUpdateFormShowing === true ? (
               <UpdateForm
                 eachObject={props.eachObject}
