@@ -1,12 +1,14 @@
 import React from "react";
 import { Form } from "react-router-dom";
 import { useState } from "react";
+import noImg from "../assets/noImage.jpg";
+import Accordion from "react-bootstrap/Accordion";
 
 function AddForms(props) {
   const [name, setName] = useState("");
   const [calories, setCalories] = useState(0);
   const [servings, setServings] = useState(1);
-  const [img, setImg] = useState("");
+  const [img, setImg] = useState(noImg);
 
   const handleImg = (event) => {
     let inputValue = event.target.value;
@@ -46,14 +48,14 @@ function AddForms(props) {
     setCalories(0);
     setServings(1);
     setImg("");
-    
-  }
+  };
 
   return (
     <div>
-      <button>
-        <h2>Añadir nueva receta</h2>
-      </button>
+      <Accordion defaultActiveKey="acordion">
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Añadir nueva receta</Accordion.Header>
+        <Accordion.Body>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="img">URL img:</label>
@@ -85,10 +87,11 @@ function AddForms(props) {
           />
         </div>
 
-        <button>
-          Añadir
-        </button>
+        <button>Añadir</button>
       </form>
+      </Accordion.Body>
+      </Accordion.Item>
+      </Accordion>
     </div>
   );
 }

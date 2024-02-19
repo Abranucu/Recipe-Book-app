@@ -7,16 +7,15 @@ import NotFound from "./pages/NotFound";
 import ItemDetails from "./pages/ItemDetails";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
-import SideBar from "./components/SideBar";
 import { useState } from "react";
 import recipes from "./data/Recipes.json";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   const [currentAllRecipes, setCurrentAllRecipes] = useState(recipes);
   return (
     <div>
       <NavBar />
-      <SideBar />
       <Routes>
         <Route
           path={"/"}
