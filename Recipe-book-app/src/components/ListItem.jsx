@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import ToggleButton from "react-bootstrap/ToggleButton";
 
 function ListItem(props) {
+  console.log(props.favRecipes)
   const [isFavorited, setIsFavorited] = useState(false);
   const [isUpdateFormShowing, setIsUpdateFormShowing] = useState(false);
 
@@ -14,14 +15,14 @@ function ListItem(props) {
     props.setCurrentAllRecipes(currentAllRecipesClone);
   };
 
-  const handleFav = () => {
+  const handleFav = (index) => {
     setIsFavorited(!isFavorited);
     if (!isFavorited) {
-      let recipeFav = props.currentAllRecipes[props.index].name;
+      let recipeFav = props.currentAllRecipes[index].name;
       props.setFavRecipes([...props.favRecipes, recipeFav]);
     } else {
       let currentFavRecipesClone = [...props.favRecipes];
-      currentFavRecipesClone.splice(props.index, 1);
+      currentFavRecipesClone.splice(index, 1);
       props.setFavRecipes(currentFavRecipesClone);
     }
   };
@@ -35,11 +36,14 @@ function ListItem(props) {
       <Accordion defaultActiveKey="acordion">
         <Accordion.Item eventKey="0">
           <Accordion.Header>
+            {props.favRecipes.find((recipe) => recipe === props.eachObject.name)
+              ? "⭐"
+              : null}
             <img
               src={props.eachObject.image}
               alt={props.eachObject.name}
               width="200px"
-              style={{ marginRight: "20px" }}
+              style={{ marginRight: "20px", marginLeft: "20px" }}
             />
             <h1>{props.eachObject.name}</h1>
           </Accordion.Header>
@@ -54,7 +58,7 @@ function ListItem(props) {
             <div style={{ display: "flex", justifyContent: "center" }}>
               <ToggleButton
                 className="mb-2"
-                id="toggle-check"
+                id={props.eachObject.id}
                 type="checkbox"
                 variant="outline-warning"
                 checked={isFavorited}

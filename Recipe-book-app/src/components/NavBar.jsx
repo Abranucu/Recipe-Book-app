@@ -68,7 +68,6 @@ function NavBar(props) {
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
                     {props.favRecipes.map((eachObject, index) => {
-                      console.log(props.favRecipes)
                       return (
                         <div key={index}>
                           <NavDropdown.Item disabled>{eachObject}</NavDropdown.Item>

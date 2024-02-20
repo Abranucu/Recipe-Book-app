@@ -11,6 +11,7 @@ function AddForms(props) {
   const [calories, setCalories] = useState(0);
   const [servings, setServings] = useState(1);
   const [img, setImg] = useState(noImg);
+  const [defaultActiveKey, setDefaultActiveKey] = useState("1");
 
   const handleImg = (event) => {
     let inputValue = event.target.value;
@@ -33,7 +34,6 @@ function AddForms(props) {
   };
 
   const handleSubmit = (event) => {
-    console.log(event);
     event.preventDefault();
     const newRecipe = {
       name: name,
@@ -51,11 +51,12 @@ function AddForms(props) {
     setCalories(0);
     setServings(1);
     setImg(noImg);
+    setDefaultActiveKey(!defaultActiveKey)
   };
 
   return (
     <div>
-      <Accordion defaultActiveKey="acordion">
+      <Accordion defaultActiveKey={defaultActiveKey}>
         <Accordion.Item eventKey="0">
           <Accordion.Header >
         Añadir nueva receta 
@@ -103,7 +104,7 @@ function AddForms(props) {
               </FloatingLabel>
 
               <div className="d-grid gap-2">
-                <Button   variant="outline-secondary" size="lg" type="submit" >
+                <Button variant="outline-secondary" size="lg" type="submit" >
                   Añadir
                 </Button>
               </div>
