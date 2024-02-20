@@ -11,6 +11,8 @@ function List(props) {
               index={index}
               currentAllRecipes={props.currentAllRecipes}
               setCurrentAllRecipes={props.setCurrentAllRecipes}
+              favRecipes={props.favRecipes}
+              setFavRecipes={props.setFavRecipes}
             />
           </div>
         );

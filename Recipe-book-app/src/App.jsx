@@ -9,13 +9,14 @@ import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import { useState } from "react";
 import recipes from "./data/Recipes.json";
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const [favRecipes, setFavRecipes] = useState([]);
   const [currentAllRecipes, setCurrentAllRecipes] = useState(recipes);
   return (
     <div>
-      <NavBar />
+      <NavBar favRecipes={favRecipes} setFavRecipes={setFavRecipes} />
       <Routes>
         <Route
           path={"/"}
@@ -23,6 +24,8 @@ function App() {
             <HomePage
               currentAllRecipes={currentAllRecipes}
               setCurrentAllRecipes={setCurrentAllRecipes}
+              favRecipes={favRecipes}
+              setFavRecipes={setFavRecipes}
             />
           }
         />

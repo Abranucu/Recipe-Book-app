@@ -10,6 +10,8 @@ function RecipesList(props) {
       <List
         currentAllRecipes={props.currentAllRecipes}
         setCurrentAllRecipes={props.setCurrentAllRecipes}
+        favRecipes={props.favRecipes}
+        setFavRecipes={props.setFavRecipes}
       />
       <hr/>
     </div>

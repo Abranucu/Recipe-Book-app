@@ -1,6 +1,7 @@
 import logoApp from "../assets/logoApp.png";
 import logoHome from "../assets/home.png";
 import logoAbout from "../assets/about.png";
+import logoFav from "../assets/fav.png";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -11,7 +12,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
 import nombreApp from "../assets/nombreApp.png";
 
-function NavBar() {
+function NavBar(props) {
   return (
     <>
       {[false].map((expand) => (
@@ -61,6 +62,20 @@ function NavBar() {
                   <Link to={"/about"}>
                     <img src={logoAbout} alt="about" width="50px" />
                   </Link>
+                  <hr />
+                  <NavDropdown
+                    title={<img src={logoFav} alt="favoritos" width="35px" />}
+                    id={`offcanvasNavbarDropdown-expand-${expand}`}
+                  >
+                    {props.favRecipes.map((eachObject, index) => {
+                      console.log(props.favRecipes)
+                      return (
+                        <div key={index}>
+                          <NavDropdown.Item disabled>{eachObject}</NavDropdown.Item>
+                        </div>
+                      );
+                    })}
+                  </NavDropdown>
                   <hr />
                 </Nav>
               </Offcanvas.Body>
