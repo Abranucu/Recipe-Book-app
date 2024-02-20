@@ -6,8 +6,8 @@ import abryFoto from "../assets/abrahamfoto.jpg";
 function About() {
   return (
     <div>
-      <h1>Descripcion del proyecto</h1>
-      <hr />
+      <h1 style={{marginBottom: "25px"}}> Descripcion del proyecto</h1>
+     
       <p>
         "De Muerte: Cocina de Autor" es una aplicación web innovadora que
         combina la pasión por la cocina con la creatividad culinaria y el
@@ -23,8 +23,8 @@ function About() {
         culinaria que desafía las convenciones y estimula el paladar.
       </p>
       <hr />
-      <h1>Creadores</h1>
-      <hr />
+      <h1 style={{marginBottom: "25px"}}>Creadores</h1>
+    
       <p>
         Somos dos personas aprendiendo a programar, y esta es nuestra primera
         APP web con react, con la cual estamos aprendiendo mucho y probando
@@ -34,59 +34,63 @@ function About() {
       <hr />
       <div>
         <div>
-          <img src={meriFoto} alt="meri" width="200px" style={{margin: "5px"}}/>
+          <img src={meriFoto} alt="meri" width="200px" style={{margin: "25px"}}/>
         </div>
         <div>
           <ul>
             <li>
               <h3>Meri: </h3>
               <p>
-                soy una chica joven, alegre y mama, estudiando para trabajar
+                Soy una chica joven, alegre y mama, estudiando para trabajar
                 desde casa y poder conciliar.
               </p>
             </li>
+            <div style={{display: "flex", justifyContent:"center"}}>
             <li>
               <a href="https://github.com/meritxellavila">
-                <img src={logoGithub} alt="logo-github" width="50px" style={{margin: "5px"}}/>
+                <img src={logoGithub} alt="logo-github" width="50px" style={{margin: "25px"}}/>
                 GitHub
               </a>
             </li>
             <li>
               <a href="https://www.linkedin.com/in/meritxell-avila-gonzalez-94844029b/">
-                <img src={logoLinkedin} alt="logo-linkedin" width="50px" style={{margin: "5px"}}/>
+                <img src={logoLinkedin} alt="logo-linkedin" width="50px" style={{margin: "25px"}}/>
                 Linkedin
               </a>
             </li>
+            </div>
           </ul>
         </div>
       </div>
       <hr />
       <div>
-        <img src={abryFoto} alt="Abry" width="200px" style={{margin: "5px"}}/>
+        <img src={abryFoto} alt="Abry" width="200px" style={{margin: "25px"}}/>
       </div>
       <div>
         <ul>
           <li>
             <h3>Abraham: </h3>
             <p>
-              por ahora soy un chico joven y anonimo al que le gusta la fiesta,
+              Por ahora soy un chico joven y anonimo al que le gusta la fiesta,
               practicar deportes y un poco cafre y estoy haciendo este curso
               para ver si encuentro un trabajo compatible con mi problema de
               salud.
             </p>
           </li>
-          <li>
+         <div style={{display: "flex", justifyContent:"center"}}>
+         <li>
             <a href="https://github.com/Abranucu">
-              <img src={logoGithub} alt="logo-github" width="50px" style={{margin: "5px"}}/>
+              <img src={logoGithub} alt="logo-github" width="50px" style={{margin: "25px"}}/>
               GitHub
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/abraham-castiello-barbas-0a9502217/">
-              <img src={logoLinkedin} alt="logo-linkedin" width="50px" style={{margin: "5px"}}/>
+              <img src={logoLinkedin} alt="logo-linkedin" width="50px" style={{margin: "25px"}}/>
               Linkedin
             </a>
           </li>
+          </div> 
         </ul>
       </div>
       <hr />

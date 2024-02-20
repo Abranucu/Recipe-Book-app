@@ -33,7 +33,7 @@ function AddForms(props) {
   };
 
   const handleSubmit = (event) => {
-    console.log(event)
+    console.log(event);
     event.preventDefault();
     const newRecipe = {
       name: name,
@@ -57,15 +57,17 @@ function AddForms(props) {
     <div>
       <Accordion defaultActiveKey="acordion">
         <Accordion.Item eventKey="0">
-          <Accordion.Header>Añadir nueva receta</Accordion.Header>
-          <Accordion.Body>
+          <Accordion.Header >
+        Añadir nueva receta 
+          </Accordion.Header>
+          <Accordion.Body >
             <Form onSubmit={handleSubmit}>
               <FloatingLabel
                 controlId="floatingInput"
                 label="URL Img:"
                 className="mb-3"
               >
-                <Form.Control type="text" value={img} onChange={handleImg} />
+                <Form.Control  type="text" value={img} onChange={handleImg} />
               </FloatingLabel>
 
               <FloatingLabel
@@ -101,7 +103,7 @@ function AddForms(props) {
               </FloatingLabel>
 
               <div className="d-grid gap-2">
-                <Button variant="primary" size="lg" type="submit">
+                <Button   variant="outline-secondary" size="lg" type="submit" >
                   Añadir
                 </Button>
               </div>

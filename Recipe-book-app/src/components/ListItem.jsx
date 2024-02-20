@@ -15,7 +15,7 @@ function ListItem(props) {
   const handleToggleUpdateForm = () =>
     setIsUpdateFormShowing(!isUpdateFormShowing);
   return (
-    <div>
+    <div style={{ backgroundColor: "green" }} >
       <Accordion defaultActiveKey="acordion">
         <Accordion.Item eventKey="0">
           <Accordion.Header>
@@ -36,13 +36,13 @@ function ListItem(props) {
             </p>
             <hr />
             <div className="d-grid gap-2">
-                <Button variant="primary" size="lg" onClick={() => handleRemove(props.index)}>
+                <Button variant="outline-danger" size="lg" onClick={() => handleRemove(props.index)}>
                 Borrar
                 </Button>
               </div>
             <hr />
             <div className="d-grid gap-2">
-                <Button variant="primary" size="lg" onClick={handleToggleUpdateForm} style={{marginBottom: "15px"}}>
+                <Button variant="outline-success" size="lg" onClick={handleToggleUpdateForm} style={{marginBottom: "15px"}}>
                 Ver Formulario de Editar
                 </Button>
               </div>

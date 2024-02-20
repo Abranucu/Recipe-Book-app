@@ -90,7 +90,7 @@ function UpdateForm(props) {
               </FloatingLabel>
 
         <div className="d-grid gap-2">
-                <Button variant="primary" size="lg" type="submit">
+                <Button variant="outline-secondary" size="lg" type="submit">
                   Editar
                 </Button>
               </div>

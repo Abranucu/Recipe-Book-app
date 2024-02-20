@@ -4,13 +4,14 @@ import allRecipes from "../data/Recipes.json";
 function RecipesList(props) {
   return (
     <div>
-      <h2>Lista de Recetas</h2>
       <hr />
+      <h2>Lista de Recetas</h2>
+      <hr/>
       <List
         currentAllRecipes={props.currentAllRecipes}
         setCurrentAllRecipes={props.setCurrentAllRecipes}
       />
-      ;
+      <hr/>
     </div>
   );
 }
